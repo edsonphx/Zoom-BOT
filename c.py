@@ -6,9 +6,9 @@ import getpass
 
 user  = getpass.getuser()
 
-code1 = ('77568020757')
-passw1 = ('vS1XB1')
-time1 = ('17:09')
+code1 = ('')
+passw1 = ('')
+time1 = ('00:00')
 
 code2 = ('')
 passw2 = ('')
@@ -28,7 +28,7 @@ time5 = ('00:00')
 
 def class0(code, passw):
    os.system("TASKKILL /F /IM Zoom.exe")
-   os.popen('C:/Users/{}/AppData/Roaming/Zoom/bin/Zoom.exe'.format(user))
+   os.popen('C:/Users/{}/AppData/Roaming/Zoom/bin/Zoom.exe'.format(user)) #Caminho padrão
    time.sleep(5)
    x,y = pyautogui.locateCenterOnScreen('join.png')
    pyautogui.click(x, y)
@@ -38,19 +38,6 @@ def class0(code, passw):
    time.sleep(5)
    pyautogui.write(str(passw))
    pyautogui.press('enter')
-   time.sleep(30)
-   pyautogui.click()
-   pyautogui.hotkey('alt', 'a')
-   #pyautogui.hotkey('alt', 'v')
-   #pyautogui.hotkey('alt', 'h')
-   #time.sleep(0.5)
-   #pyautogui.write('bom dia')
-   #time.sleep(0.5)
-   #pyautogui.press('Enter')
-   #time.sleep(5)
-   #pyautogui.write('meu microfone ta ruim mas eu vou ver de arrumar')
-   #time.sleep(0.5)
-   #pyautogui.press('Enter')
  
 schedule.every().day.at(time1).do(class0, code=code1, passw=passw1)
 schedule.every().day.at(time2).do(class0, code=code2, passw=passw2)
